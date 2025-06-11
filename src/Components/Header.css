@@ -1,24 +1,42 @@
-.header {
+/* src/components/Header.css */
+
+.main-header {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background-color: rgb(0, 0, 0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 50;
-  transition: opacity 0.5s ease-in-out;
+  background-color: #0d8476e3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  z-index: 999;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.hidden {
-  opacity: 0;
+/* declarando color para usarlo como contorno en el header */
+:root {
+  --borderColorHeader: #00620d;
+}
+.main-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #0eff36;
+  text-shadow: -1px -1px 0 var(--borderColorHeader),
+    1px -1px 0 var(--borderColorHeader), -1px 1px 0 var(--borderColorHeader),
+    1px 1px 0 var(--borderColorHeader);
 }
 
-.visible {
+/* Aparece normalmente */
+.main-header.visible {
   opacity: 1;
+  transform: translateY(0);
 }
 
-.title {
-  padding: 1rem;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
+/* Desaparece al llegar al footer */
+.main-header.hidden {
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
 }

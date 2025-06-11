@@ -7,10 +7,10 @@ function App() {
   return (
     <>
       <Header />
-      <div className="content">
+      <main>
         <Home />
-        <Footer />
-      </div>
+      </main>
+      <Footer />
     </>
   )
 }
