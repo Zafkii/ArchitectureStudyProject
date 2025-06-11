@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+/* personalizado */
+.content {
+  padding-top: 5rem; /* Espacio para el header y no se sobreponga con el contenido dinamico o main*/
+}
